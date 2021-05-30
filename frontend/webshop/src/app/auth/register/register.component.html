@@ -1,0 +1,42 @@
+<div class="margin-auto login-form">
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <mat-form-field>
+      <mat-label>Your email</mat-label>
+      <input
+        type="email"
+        matInput
+        placeholder="abc123@example.com"
+        formControlName="email"
+      />
+      <mat-hint>Please enter your email.</mat-hint>
+      <mat-error>Invalid or missing email.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password" />
+      <mat-hint>Please enter your password.</mat-hint>
+      <mat-error>Missing Password.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password again</mat-label>
+      <input type="password" matInput formControlName="passwordConfirm" />
+      <mat-error>The two passwords are not the same.</mat-error>
+    </mat-form-field>
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [disabled]="registerForm.invalid"
+      class="w-100 pt-15"
+    >
+      Register
+    </button>
+    <mat-divider></mat-divider>
+    <div class="align-center">
+      <small>
+        If you have an account yet, login
+        <a routerLink="/auth/login">HERE</a>!
+      </small>
+    </div>
+  </form>
+</div>

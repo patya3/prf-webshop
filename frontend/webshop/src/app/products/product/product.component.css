@@ -1,0 +1,16 @@
+img {
+  max-width: calc((50% - 0.5px) * 1 + 0px);
+}
+
+mat-grid-list {
+  max-width: 992px;
+  margin: auto;
+}
+
+.data-grid > figure {
+  justify-content: left !important;
+}
+
+.img-grid > figure {
+  justify-content: right !important;
+}

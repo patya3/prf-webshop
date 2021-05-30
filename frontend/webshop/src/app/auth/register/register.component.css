@@ -1,0 +1,16 @@
+.login-form {
+  width: 260px;
+  margin-top: 100px;
+}
+
+.login-form mat-form-field {
+  width: 100%;
+}
+
+.login-form button {
+  margin-top: 15px;
+}
+
+.login-form mat-divider {
+  margin-top: 10px;
+}

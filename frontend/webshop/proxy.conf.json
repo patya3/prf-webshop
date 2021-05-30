@@ -1,0 +1,10 @@
+{
+  "/server": {
+    "target": "",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/server": ""
+    }
+  }
+}

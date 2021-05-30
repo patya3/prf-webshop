@@ -1,0 +1,15 @@
+.menu-buttons {
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+}
+
+.menu-buttons button {
+  height: 100%;
+}
+
+.active-link {
+  border-bottom: 3px solid;
+  border-radius: 0;
+}

@@ -1,0 +1,59 @@
+<mat-grid-list cols="2" rowHeight="2:1" *ngIf="product">
+  <mat-grid-tile class="img-grid">
+    <div style="width: 100%; text-align: right;">
+      <img
+        mat-card-image
+        [src]="
+          product.imageUrl
+            ? product.imageUrl
+            : 'https://material.angular.io/assets/img/examples/shiba2.jpg'
+        "
+        alt="Photo of a Shiba Inu"
+      />
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile class="data-grid">
+    <div style="width: 100%; text-align: left;">
+      <mat-list>
+        <mat-list-item>
+          <b>
+            <h2>{{ product.name }}</h2>
+          </b>
+        </mat-list-item>
+        <mat-list-item>
+          <strong>Brand: </strong> {{ product.brand }}
+        </mat-list-item>
+        <mat-list-item>
+          <strong>Category: </strong> {{ product.type }}
+        </mat-list-item>
+        <mat-list-item>
+          <strong>Price: </strong>
+          {{ product.price | currency: 'HUF ':'symbol':'4.0-2' }}
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile class="align-baseline" style="padding-top: 40px;">
+    <div style="width: 100%; text-align: right; padding-top: 20px;">
+      <button mat-raised-button color="primary" (click)="addToCart()">
+        <mat-icon>add_shopping_cart</mat-icon> Add to cart
+      </button>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile class="align-baseline">
+    <div
+      style="
+        width: 100%;
+        text-align: left;
+        padding-left: 15px;
+        padding-top: 20px;
+        font-size: 16px;
+      "
+    >
+      <p>
+        <strong>Description:</strong>
+        {{ product.description }}
+      </p>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

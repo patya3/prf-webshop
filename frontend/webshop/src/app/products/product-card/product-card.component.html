@@ -1,0 +1,26 @@
+<mat-card class="example-card" style="width: 566px;">
+  <img
+    style="cursor: pointer; height: 432px; object-fit: contain;"
+    mat-card-image
+    [src]="
+      product.imageUrl
+        ? product.imageUrl
+        : 'https://material.angular.io/assets/img/examples/shiba2.jpg'
+    "
+    alt="Photo of a Shiba Inu"
+    routerLink="/products/{{ product._id }}"
+    [state]="product"
+  />
+  <mat-card-content>
+    <mat-card-title>{{ product.name }}</mat-card-title>
+    <mat-card-subtitle>{{
+      product.price | currency: 'HUF ':'symbol':'4.0-2'
+    }}</mat-card-subtitle>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="primary" (click)="addToCart()">
+      <mat-icon>add_shopping_cart</mat-icon>
+      Add to Shopping Cart
+    </button>
+  </mat-card-actions>
+</mat-card>

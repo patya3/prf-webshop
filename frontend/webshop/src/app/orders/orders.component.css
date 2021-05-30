@@ -1,0 +1,48 @@
+table {
+  width: 100%;
+  text-align: center;
+}
+
+.mat-column-date,
+.mat-column-totalPrice,
+.mat-column-actions {
+  text-align: center;
+}
+
+.mat-column-expandedDetail {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  min-width: 300px;
+}
+
+tr.detail-row {
+  height: 0;
+}
+
+tr.element-row:not(.expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.element-row:not(.expanded-row):active {
+  background: #efefef;
+}
+
+.element-row td {
+  border-bottom-width: 0;
+}
+
+.element-detail {
+  overflow: hidden;
+}
+
+.details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}

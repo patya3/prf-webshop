@@ -1,0 +1,63 @@
+<div fxLayout="row" fxLayoutAlign="center">
+  <div fxFlex.gt-sm="30">
+    <ng-container *ngIf="cartService.products.length > 0; else noProduct">
+      <div class="order-button-wrapper">
+        <div>
+          <button
+            mat-raised-button
+            color="accent"
+            class="order-button"
+            (click)="emptyCart()"
+          >
+            Empty cart
+          </button>
+        </div>
+        <div>
+          <strong style="padding-right: 20px;">
+            Total:
+            {{ cartService.totalPrice | currency: 'HUF ':'symbol':'4.0-2' }}
+          </strong>
+          <button
+            mat-raised-button
+            color="primary"
+            class="order-button"
+            (click)="placeOrder()"
+          >
+            Place order
+          </button>
+        </div>
+      </div>
+      <table mat-table #table [dataSource]="cartService.products">
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>#</th>
+          <td mat-cell *matCellDef="let element; let i = index">{{ i + 1 }}</td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let p">
+            <a routerLink="/products/{{ p._id }}">{{ p.name }}</a>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef>Price</th>
+          <td mat-cell *matCellDef="let p">
+            {{ p.price | currency: 'HUF ':'symbol':'4.0-2' }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let p">
+            <button mat-icon-button color="warn" (click)="removeFromCart(p)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayColumns"></tr>
+      </table>
+    </ng-container>
+    <ng-template #noProduct>
+      <h2 style="text-align: center; padding-top: 30px;">The cart is empty.</h2>
+    </ng-template>
+  </div>
+</div>

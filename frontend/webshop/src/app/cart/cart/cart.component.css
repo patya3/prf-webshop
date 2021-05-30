@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+  text-align: center;
+}
+
+.mat-column-name,
+.mat-column-price,
+.mat-column-actions {
+  text-align: center;
+}
+
+.mat-column-position {
+  width: 32px;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  padding-right: 24px;
+  text-align: center;
+}
+
+.order-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}

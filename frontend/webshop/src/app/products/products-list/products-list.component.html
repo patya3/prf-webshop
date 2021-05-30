@@ -1,0 +1,22 @@
+<div fxLayout="column" style="padding-top: 20px;">
+  <div fxFill fxLayoutAlign="center" fxFlex.gt-md="100%">
+    <div
+      fxLayout="row wrap"
+      fxLayoutGap="20px grid"
+      fxLayoutAlign="center"
+      fxFlex.gt-md="70%"
+    >
+      <app-product-card
+        *ngFor="let product of products"
+        [product]="product"
+      ></app-product-card>
+    </div>
+  </div>
+  <div fxFill fxLayoutAlign="center" fxFlex.gt-md="100%">
+    <mat-paginator
+      [length]="paginationData ? paginationData.count : 0"
+      [pageSize]="6"
+      (page)="getProductPage($event)"
+    ></mat-paginator>
+  </div>
+</div>
